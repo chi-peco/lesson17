@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JLPT N5 Japanese Lesson Guide — 17回目</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --black: #111111; --gray: #666666; --lgray: #999999;
+  --border: #cccccc; --red: #cc0000; --bg: #f5f5f5; --white: #ffffff;
+  --yellow: #fffde7; --try-bg: #f0f7ff; --try-border: #90b8d8;
+  --g1: #fdf2e2; --g2: #eaf4fb; --g3: #f4eafb; --g1-sub: #fef8ef;
+  --g1-border: #e67e22; --g2-border: #2980b9; --g3-border: #8e44ad;
+}
+body { font-family: Arial, sans-serif; font-size: 15px; color: var(--black); background: var(--bg); padding-bottom: 60px; line-height: 1.6; }
+nav { position: sticky; top: 0; background: var(--white); border-bottom: 2px solid var(--black); padding: 8px 20px; display: flex; flex-wrap: wrap; gap: 6px; z-index: 100; }
+nav a { font-size: 12px; color: var(--gray); text-decoration: none; padding: 3px 10px; border: 1px solid var(--border); border-radius: 3px; white-space: nowrap; }
+nav a:hover { background: var(--black); color: var(--white); }
+.page { max-width: 820px; margin: 0 auto; padding: 0 20px; }
+.title-bar { background: var(--white); border-bottom: 3px solid var(--black); padding: 20px 20px 14px; }
+.title-bar h1 { font-size: 26px; font-weight: 900; }
+.title-bar h1 span { font-size: 18px; font-weight: 400; color: var(--gray); margin-left: 8px; }
+.title-bar .sub { font-size: 14px; color: var(--black); font-weight: 700; margin-top: 4px; }
+.title-bar .toc { font-size: 13px; color: var(--gray); margin-top: 4px; }
+.section { background: var(--white); border: 1px solid var(--border); border-radius: 4px; margin: 20px 0; overflow: hidden; }
+.section-header { border-top: 3px solid var(--black); border-bottom: 3px solid var(--black); padding: 10px 20px; font-size: 17px; font-weight: 700; }
+.section-header .ja { font-size: 13px; color: var(--gray); font-weight: 400; margin-left: 8px; }
+.section-body { padding: 20px; }
+h2 { font-size: 16px; font-weight: 700; margin: 18px 0 8px; }
+h2 .ja { font-size: 12px; color: var(--gray); font-weight: 400; margin-left: 6px; }
+.intro-example { border-left: 3px solid var(--border); padding: 8px 14px; margin: 0 0 14px; background: transparent; }
+.intro-example .intro-label { font-size: 11px; font-weight: 700; color: var(--lgray); letter-spacing: 1px; margin-bottom: 6px; }
+.intro-example .intro-line { font-family: monospace; font-size: 14px; margin: 4px 0 2px; }
+.intro-example .intro-en { color: var(--lgray); font-size: 12px; font-style: italic; margin: 0 0 6px; }
+.logic-box { border: 1px solid var(--border); border-radius: 4px; padding: 14px 16px; margin: 12px 0; background: #fafafa; }
+.logic-box p { font-size: 14px; margin: 4px 0; }
+.logic-box .ja { color: var(--gray); font-size: 12px; margin: 2px 0 8px; }
+.structure { border: 1px solid var(--gray); font-family: monospace; font-size: 14px; padding: 10px 14px; margin: 10px 0; background: #fafafa; border-radius: 3px; }
+.structure div { margin: 2px 0; }
+.legend { font-size: 11px; color: var(--lgray); margin: -6px 0 10px 2px; font-style: italic; }
+.rule-box { background: #fafafa; border: 1px solid var(--border); border-radius: 3px; padding: 10px 14px; margin: 10px 0; font-size: 13px; }
+.rule-line { font-family: monospace; margin: 3px 0; font-size: 13px; }
+.check-pair { border: 3px solid var(--black); border-radius: 4px; padding: 12px 16px; margin: 10px 0; }
+.check-row { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; margin: 6px 0; }
+.check-row + .check-row { margin-top: 10px; padding-top: 10px; border-top: 1px solid #eee; }
+.check-mark { font-size: 18px; font-weight: 700; flex-shrink: 0; }
+.check-mark.ok { color: var(--black); }
+.check-mark.ng { color: var(--red); }
+.check-text { font-family: monospace; font-size: 15px; }
+.check-text.ng { color: var(--red); }
+.check-reason { color: var(--gray); font-size: 13px; margin-top: 3px; margin-left: 28px; font-style: italic; display: block; width: 100%; }
+.example-box { border: 3px solid var(--black); border-radius: 4px; padding: 12px 16px; margin: 10px 0; }
+.example-label { font-weight: 700; font-size: 12px; letter-spacing: 1px; margin-bottom: 8px; }
+.example-line { font-family: monospace; font-size: 14px; margin: 3px 0; }
+.example-line.en { color: var(--lgray); font-size: 12px; font-style: italic; font-family: Arial, sans-serif; }
+.note { border-left: 4px solid var(--black); padding: 10px 14px; margin: 14px 0; font-size: 13px; }
+.note-label { font-weight: 700; margin-bottom: 6px; }
+.note ul { padding-left: 16px; }
+.note li { margin: 4px 0; }
+.note .ja { color: var(--gray); font-size: 12px; }
+.summary-table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 12px 0; }
+.summary-table th, .summary-table td { border: 1px solid var(--border); padding: 7px 10px; vertical-align: top; }
+.summary-table th { font-weight: 700; background: #fafafa; }
+.step-box { margin: 12px 0; }
+.step-row { display: flex; align-items: flex-start; gap: 10px; margin: 8px 0; font-size: 14px; }
+.step-num { background: var(--black); color: var(--white); font-size: 12px; font-weight: 700; min-width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+.step-content { flex: 1; }
+.step-content .ja { color: var(--gray); font-size: 12px; margin-top: 2px; }
+.try-box { background: var(--try-bg); border: 2px solid var(--try-border); border-radius: 4px; padding: 14px 16px; margin: 14px 0; }
+.try-label { font-size: 12px; font-weight: 700; letter-spacing: 1px; color: var(--try-border); margin-bottom: 10px; }
+.try-prompt { font-size: 14px; margin: 6px 0; }
+.try-prompt .ja { color: var(--gray); font-size: 12px; }
+.try-line { font-family: monospace; font-size: 15px; margin: 8px 0 20px; padding-bottom: 32px; color: var(--lgray); }
+.use-table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 10px 0 16px; }
+.use-table th, .use-table td { border: 1px solid var(--border); padding: 6px 10px; vertical-align: top; }
+.use-table th { background: #fafafa; font-weight: 700; }
+.use-table tr.today { background: var(--yellow); font-weight: 700; }
+.exception-box { border: 2px solid #e67e22; border-radius: 4px; padding: 12px 16px; margin: 10px 0; background: var(--yellow); font-size: 13px; }
+.exception-label { font-weight: 700; color: #e67e22; margin-bottom: 6px; }
+.group-badge { display: inline-block; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 3px; margin-right: 4px; white-space: nowrap; }
+.gb1 { background: var(--g1); color: var(--g1-border); border: 1px solid var(--g1-border); }
+.gb2 { background: var(--g2); color: var(--g2-border); border: 1px solid var(--g2-border); }
+.gb3 { background: var(--g3); color: var(--g3-border); border: 1px solid var(--g3-border); }
+ruby rt { font-size: 10px; color: var(--lgray); }
+@media print {
+  nav { display: none !important; }
+  body { background: #fff; font-size: 13px; }
+  .page { max-width: 100%; padding: 0; }
+  .section { border: 1px solid #999; margin: 10px 0; page-break-inside: avoid; }
+  .check-text.ng { color: #000; text-decoration: line-through; }
+  .check-mark.ng { color: #000; }
+  a { color: #000; text-decoration: none; }
+  .try-box { background: #fff; border: 1px solid #555; }
+  .try-line { padding-bottom: 32px; margin-bottom: 20px; }
+}
+</style>
+</head>
+<body>
+
+<div class="title-bar">
+  <div class="page">
+    <h1>JLPT N5 <span>Japanese Lesson Guide</span></h1>
+    <div class="sub">17<ruby>回目<rt>かいめ</rt></ruby></div>
+    <div class="toc">
+      1. は［<ruby>文<rt>ぶん</rt></ruby>の<ruby>主題<rt>しゅだい</rt></ruby>］ &nbsp;|&nbsp;
+      2. には／では／とは／へは &nbsp;|&nbsp;
+      3. にも／でも／とも／へも &nbsp;|&nbsp;
+      4. <ruby>何<rt>なに</rt></ruby>も／だれも〜ません &nbsp;|&nbsp;
+      5. が［<ruby>描写<rt>びょうしゃ</rt></ruby>］
+    </div>
+  </div>
+</div>
+
+<nav>
+  <a href="#s1">1. は［<ruby>主題<rt>しゅだい</rt></ruby>］</a>
+  <a href="#s2">2. には／では／とは／へは</a>
+  <a href="#s3">3. にも／でも／とも／へも</a>
+  <a href="#s4">4. <ruby>何<rt>なに</rt></ruby>も／だれも〜ません</a>
+  <a href="#s5">5. が［<ruby>描写<rt>びょうしゃ</rt></ruby>］</a>
+  <a href="#summary">まとめ Summary</a>
+</nav>
+
+<div class="page">
+
+<!-- ══════════════════════════════════════════
+     SECTION 1: は［文の主題］
+══════════════════════════════════════════ -->
+<div class="section" id="s1">
+  <div class="section-header">
+    1. は［<ruby>文<rt>ぶん</rt></ruby>の<ruby>主題<rt>しゅだい</rt></ruby>］
+    <span class="ja">は as object-topic marker — changing を → は</span>
+  </div>
+  <div class="section-body">
+
+    <!-- 導入例文 -->
+    <div class="intro-example">
+      <div class="intro-label">EXAMPLES — Let's look first.
+        <span style="font-weight:400; color:var(--lgray);">→ まず<ruby>例文<rt>れいぶん</rt></ruby>を<ruby>見<rt>み</rt></ruby>てみましょう。</span>
+      </div>
+      <div class="intro-line">しゅくだい<span style="color:var(--red);font-weight:700;">は</span> あした <ruby>出<rt>だ</rt></ruby>して ください。</div>
+      <div class="intro-en">Please hand in your homework tomorrow. (homework = topic)</div>
+      <div class="intro-line">この <ruby>本<rt>ほん</rt></ruby><span style="color:var(--red);font-weight:700;">は</span> もう <ruby>読<rt>よ</rt></ruby>みました。</div>
+      <div class="intro-en">This book, I have already read. (book = topic)</div>
+    </div>
+
+    <!-- ロジックボックス -->
+    <div class="logic-box">
+      <p>Normally, the <strong>object</strong> of a sentence uses the particle <strong>「を」</strong>.</p>
+      <div class="ja">→ ふつう、<ruby>目的語<rt>もくてきご</rt></ruby>（object）には「を」をつかいます。(<ruby>目的語<rt>もくてきご</rt></ruby> = the thing that receives the action)</div>
+      <p style="margin-top:8px;">But when you want to <strong>highlight the object as the topic</strong> of the sentence, or <strong>contrast it</strong> with something else, change <strong>「を」→「は」</strong>.</p>
+      <div class="ja">→ <ruby>目的語<rt>もくてきご</rt></ruby>を<ruby>話題<rt>わだい</rt></ruby>にしたり、<ruby>他<rt>ほか</rt></ruby>のものと<ruby>対比<rt>たいひ</rt></ruby>するとき、「を」を「は」に<ruby>変<rt>か</rt></ruby>えます。(The basic meaning does not change — only the focus changes.)</div>
+      <p style="margin-top:8px;">💡 The particle 「を」<em>disappears</em> — it is <strong>replaced</strong> by 「は」.</p>
+      <div class="ja">→ 「を」は<ruby>消<rt>き</rt></ruby>えます。「は」に<ruby>入<rt>い</rt></ruby>れ<ruby>替<rt>か</rt></ruby>わります。(「を」vanishes and 「は」takes its place.)</div>
+    </div>
+
+    <!-- 構造式 -->
+    <div class="structure">
+      <div>N[<ruby>目的語<rt>もくてきご</rt></ruby>] + <span style="text-decoration:line-through; color:var(--red);">を</span> → <strong>は</strong> + V</div>
+    </div>
+    <div class="legend">N = noun（<ruby>名詞<rt>めいし</rt></ruby>）　V = verb（<ruby>動詞<rt>どうし</rt></ruby>）</div>
+
+    <!-- Transform -->
+    <div style="margin:10px 0 4px;">
+      <span style="font-size:13px; color:var(--gray);">change: 「を」→「は」</span>
+    </div>
+    <div style="font-family:monospace; font-size:14px; margin:6px 0 4px; background:#fafafa; border:1px solid var(--border); border-radius:3px; padding:10px 14px;">
+      <ruby>映画<rt>えいが</rt></ruby><span style="color:var(--red); text-decoration:line-through;">を</span> <ruby>見<rt>み</rt></ruby>ました。 → <ruby>映画<rt>えいが</rt></ruby><span style="color:var(--red); font-weight:700;">は</span> <ruby>見<rt>み</rt></ruby>ました。
+      <span style="color:var(--lgray); font-size:11px; display:block; margin-top:4px;">I watched the movie. → The movie, I watched. (highlighting "movie" as topic)</span>
+    </div>
+
+    <!-- ○/× -->
+    <div class="check-pair">
+      <div class="check-row">
+        <span class="check-mark ok">○</span>
+        <span class="check-text"><ruby>映画<rt>えいが</rt></ruby><strong>は</strong> <ruby>見<rt>み</rt></ruby>ました。でも、ドラマ<strong>は</strong> <ruby>見<rt>み</rt></ruby>ませんでした。</span>
+        <span class="check-reason">The movie I watched. But the drama I did not. — 「は」marks each object as a contrasted topic. → 「は」で<ruby>対比<rt>たいひ</rt></ruby>している。（Contrasting two objects with は.）</span>
+      </div>
+      <div class="check-row">
+        <span class="check-mark ng">×</span>
+        <span class="check-text ng"><ruby>映画<rt>えいが</rt></ruby><strong>を</strong> <ruby>見<rt>み</rt></ruby>ました。でも、ドラマ<strong>を</strong> <ruby>見<rt>み</rt></ruby>ませんでした。</span>
+        <span class="check-reason" style="color:var(--red);">Using 「を」in both sentences loses the contrast. — 「を」では<ruby>対比<rt>たいひ</rt></ruby>が<ruby>出<rt>で</rt></ruby>ない。（No contrast with を.）</span>
+      </div>
+    </div>
+
+    <!-- Example -->
+    <div class="example-box">
+      <div class="example-label">EXAMPLE <ruby>例文<rt>れいぶん</rt></ruby></div>
+      <div class="example-line">しゅくだい<strong>は</strong> あした <ruby>出<rt>だ</rt></ruby>して ください。</div>
+      <div class="example-line en">Please hand in your homework tomorrow. (homework = highlighted topic)</div>
+      <div class="example-line" style="margin-top:6px;"><ruby>牛乳<rt>ぎゅうにゅう</rt></ruby><strong>は</strong> <ruby>飲<rt>の</rt></ruby>みます。でも、ジュース<strong>は</strong> <ruby>飲<rt>の</rt></ruby>みません。</div>
+      <div class="example-line en">I drink milk. But juice, I don't drink. (contrasting two objects)</div>
+    </div>
+
+    <!-- TRY IT -->
+    <div class="try-box">
+      <div class="try-label">✏️ TRY IT! <ruby>自分<rt>じぶん</rt></ruby>で<ruby>書<rt>か</rt></ruby>いてみよう</div>
+      <div class="try-prompt">Change 「を」to 「は」to highlight the object as a topic.
+        <div class="ja">→「を」を「は」に<ruby>変<rt>か</rt></ruby>えて、<ruby>目的語<rt>もくてきご</rt></ruby>を<ruby>話題<rt>わだい</rt></ruby>にしてみましょう。</div>
+      </div>
+      <div class="try-line">＿＿＿＿＿＿＿は ＿＿＿＿＿＿＿ました。</div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     SECTION 2: には／では／とは／へは
+══════════════════════════════════════════ -->
+<div class="section" id="s2">
+  <div class="section-header">
+    2. には／では／とは／へは
+    <span class="ja">particle + は — topic / contrast marker added to other particles</span>
+  </div>
+  <div class="section-body">
+
+    <!-- 導入例文 -->
+    <div class="intro-example">
+      <div class="intro-label">EXAMPLES — Let's look first.
+        <span style="font-weight:400; color:var(--lgray);">→ まず<ruby>例文<rt>れいぶん</rt></ruby>を<ruby>見<rt>み</rt></ruby>てみましょう。</span>
+      </div>
+      <div class="intro-line"><ruby>私<rt>わたし</rt></ruby>の<ruby>国<rt>くに</rt></ruby><span style="color:var(--red);font-weight:700;">には</span> すし<ruby>屋<rt>や</rt></ruby>が ありません。</div>
+      <div class="intro-en">In my country, there are no sushi restaurants. (に + は = には)</div>
+      <div class="intro-line">この <ruby>店<rt>みせ</rt></ruby><span style="color:var(--red);font-weight:700;">では</span> カードが つかえません。</div>
+      <div class="intro-en">In this shop, you cannot use a card. (で + は = では)</div>
+    </div>
+
+    <!-- ロジックボックス -->
+    <div class="logic-box">
+      <p>In Lesson 1, you learned that 「は」marks the <strong>topic</strong> of a sentence. In Section 1 of this lesson, 「を」was <em>replaced</em> by 「は」.</p>
+      <div class="ja">→ L1で「は」が<ruby>主題<rt>しゅだい</rt></ruby>を<ruby>示<rt>しめ</rt></ruby>すことを<ruby>学<rt>まな</rt></ruby>びました。セクション１では「を」が「は」に<ruby>変<rt>か</rt></ruby>わりました。(Lesson 1: topic marker. Section 1: を replaced by は.)</div>
+      <p style="margin-top:8px;">For other particles (に、で、と、へ), the particle <strong>stays</strong> and 「は」is <strong>added after it</strong>.</p>
+      <div class="ja">→ に・で・と・へなど、<ruby>他<rt>ほか</rt></ruby>の<ruby>助詞<rt>じょし</rt></ruby>には「は」を<ruby>後<rt>うし</rt></ruby>ろにつけます。<ruby>助詞<rt>じょし</rt></ruby>は<ruby>消<rt>き</rt></ruby>えません。(The particle stays. 「は」is added on top of it.)</div>
+    </div>
+
+    <!-- 変化テーブル -->
+    <table class="use-table">
+      <thead>
+        <tr>
+          <th><ruby>助詞<rt>じょし</rt></ruby> Particle</th>
+          <th>＋ は</th>
+          <th><ruby>意味<rt>いみ</rt></ruby> Meaning</th>
+          <th><ruby>例<rt>れい</rt></ruby> Example</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="font-family:monospace; font-size:15px; font-weight:700; text-align:center;">に</td>
+          <td style="font-family:monospace; font-size:15px; font-weight:700; text-align:center; color:var(--red);">には</td>
+          <td>at / in (location) — highlighted</td>
+          <td style="font-family:monospace;"><ruby>国<rt>くに</rt></ruby><strong>には</strong> <ruby>海<rt>うみ</rt></ruby>が ありません。<span style="color:var(--lgray); font-size:11px; display:block;">In my country there is no sea.</span></td>
+        </tr>
+        <tr>
+          <td style="font-family:monospace; font-size:15px; font-weight:700; text-align:center;">で</td>
+          <td style="font-family:monospace; font-size:15px; font-weight:700; text-align:center; color:var(--red);">では</td>
+          <td>at / in (action location) — highlighted</td>
+          <td style="font-family:monospace;"><ruby>学校<rt>がっこう</rt></ruby><strong>では</strong> スマホを つかいません。<span style="color:var(--lgray); font-size:11px; display:block;">At school, I don't use my phone.</span></td>
+        </tr>
+        <tr>
+          <td style="font-family:monospace; font-size:15px; font-weight:700; text-align:center;">と</td>
+          <td style="font-family:monospace; font-size:15px; font-weight:700; text-align:center; color:var(--red);">とは</td>
+          <td>with (person) — highlighted</td>
+          <td style="font-family:monospace;">A<ruby>さん<rt></rt></ruby><strong>とは</strong> <ruby>話<rt>はな</rt></ruby>しましたが、Bさん<strong>とは</strong> まだです。<span style="color:var(--lgray); font-size:11px; display:block;">I spoke with A, but not with B yet. (contrast)</span></td>
+        </tr>
+        <tr>
+          <td style="font-family:monospace; font-size:15px; font-weight:700; text-align:center;">へ</td>
+          <td style="font-family:monospace; font-size:15px; font-weight:700; text-align:center; color:var(--red);">へは</td>
+          <td>to (direction) — highlighted</td>
+          <td style="font-family:monospace;">アメリカ<strong>へは</strong> <ruby>行<rt>い</rt></ruby>きましたが、カナダ<strong>へは</strong> <ruby>行<rt>い</rt></ruby>きませんでした。<span style="color:var(--lgray); font-size:11px; display:block;">I went to America, but not to Canada. (contrast)</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- 構造式 -->
+    <div class="structure">
+      <div>N ＋ <strong>particle</strong> ＋ <strong>は</strong></div>
+      <div style="color:var(--lgray); font-size:12px; margin-top:4px;">に → には ／ で → では ／ と → とは ／ へ → へは</div>
+    </div>
+    <div class="legend">N = noun（<ruby>名詞<rt>めいし</rt></ruby>）</div>
+
+    <!-- 助詞の基本用法 -->
+    <h2><ruby>助詞<rt>じょし</rt></ruby>の<ruby>基本<rt>きほん</rt></ruby>の<ruby>使<rt>つか</rt></ruby>い<ruby>方<rt>かた</rt></ruby> <span class="ja">What each particle means on its own</span></h2>
+    <p style="font-size:13px; color:var(--gray); margin-bottom:8px;">Before adding 「は」, make sure you understand what each particle does by itself. → 「は」をつける<ruby>前<rt>まえ</rt></ruby>に、それぞれの<ruby>助詞<rt>じょし</rt></ruby>の<ruby>基本<rt>きほん</rt></ruby>の<ruby>意味<rt>いみ</rt></ruby>を<ruby>確認<rt>かくにん</rt></ruby>しましょう。</p>
+
+    <table class="use-table">
+      <thead>
+        <tr>
+          <th style="width:36px;"><ruby>助詞<rt>じょし</rt></ruby></th>
+          <th><ruby>基本<rt>きほん</rt></ruby>の<ruby>意味<rt>いみ</rt></ruby> Basic meaning</th>
+          <th><ruby>主<rt>おも</rt></ruby>な<ruby>用法<rt>ようほう</rt></ruby> Main uses</th>
+          <th><ruby>例<rt>れい</rt></ruby> Example (without は)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="font-family:monospace; font-size:18px; font-weight:900; text-align:center;">に</td>
+          <td><strong>at / in / to / on</strong><br><span style="color:var(--lgray); font-size:11px;">shows <em>where</em> something is, <em>when</em> it happens, or <em>who/where</em> it goes to</span></td>
+          <td style="font-size:12px;">
+            ①<ruby>時<rt>とき</rt></ruby> time (L5)<br>
+            ②<ruby>対象<rt>たいしょう</rt></ruby> target (L7)<br>
+            ③<ruby>存在<rt>そんざい</rt></ruby>の<ruby>場所<rt>ばしょ</rt></ruby> location (L8)<br>
+            ④<ruby>目的<rt>もくてき</rt></ruby> purpose (L9)<br>
+            ⑤<ruby>着点<rt>ちゃくてん</rt></ruby> destination (L10)<br>
+            ⑥<ruby>置<rt>お</rt></ruby>く<ruby>場所<rt>ばしょ</rt></ruby> place to put (L14)
+          </td>
+          <td style="font-family:monospace; font-size:13px;">
+            6<ruby>時<rt>じ</rt></ruby><strong>に</strong> おきます。<span style="color:var(--lgray); font-size:11px; display:block;">I wake up at 6.</span>
+            <span style="height:4px; display:block;"></span>
+            <ruby>東京<rt>とうきょう</rt></ruby><strong>に</strong> つきました。<span style="color:var(--lgray); font-size:11px; display:block;">I arrived in Tokyo.</span>
+            <span style="height:4px; display:block;"></span>
+            <ruby>机<rt>つくえ</rt></ruby>の<ruby>上<rt>うえ</rt></ruby><strong>に</strong> <ruby>本<rt>ほん</rt></ruby>が あります。<span style="color:var(--lgray); font-size:11px; display:block;">There is a book on the desk.</span>
+          </td>
+        </tr>
+        <tr>
+          <td style="font-family:monospace; font-size:18px; font-weight:900; text-align:center;">で</td>
+          <td><strong>at / in / by / with</strong><br><span style="color:var(--lgray); font-size:11px;">shows <em>where</em> an action happens, or <em>how</em> it is done (means / method)</span></td>
+          <td style="font-size:12px;">
+            ①<ruby>動作<rt>どうさ</rt></ruby>の<ruby>場所<rt>ばしょ</rt></ruby> action location (L4)<br>
+            ②<ruby>方法<rt>ほうほう</rt></ruby>・<ruby>手段<rt>しゅだん</rt></ruby> means (L5)
+          </td>
+          <td style="font-family:monospace; font-size:13px;">
+            としょかん<strong>で</strong> <ruby>本<rt>ほん</rt></ruby>を <ruby>読<rt>よ</rt></ruby>みます。<span style="color:var(--lgray); font-size:11px; display:block;">I read at the library. (action location)</span>
+            <span style="height:4px; display:block;"></span>
+            バス<strong>で</strong> いきます。<span style="color:var(--lgray); font-size:11px; display:block;">I go by bus. (means)</span>
+          </td>
+        </tr>
+        <tr>
+          <td style="font-family:monospace; font-size:18px; font-weight:900; text-align:center;">と</td>
+          <td><strong>and / with</strong><br><span style="color:var(--lgray); font-size:11px;">lists things together (<em>and</em>), or shows who you do something <em>with</em></span></td>
+          <td style="font-size:12px;">
+            ①<ruby>並列<rt>へいれつ</rt></ruby> list "and" (L8)<br>
+            ②<ruby>共同<rt>きょうどう</rt></ruby> "together with" (L11)
+          </td>
+          <td style="font-family:monospace; font-size:13px;">
+            <ruby>本<rt>ほん</rt></ruby><strong>と</strong> ノートが あります。<span style="color:var(--lgray); font-size:11px; display:block;">There is a book and a notebook.</span>
+            <span style="height:4px; display:block;"></span>
+            ともだち<strong>と</strong> いきます。<span style="color:var(--lgray); font-size:11px; display:block;">I go with a friend.</span>
+          </td>
+        </tr>
+        <tr>
+          <td style="font-family:monospace; font-size:18px; font-weight:900; text-align:center;">へ</td>
+          <td><strong>to / toward</strong><br><span style="color:var(--lgray); font-size:11px;">shows the <em>direction</em> of movement — where you are heading</span></td>
+          <td style="font-size:12px;">
+            ①<ruby>方向<rt>ほうこう</rt></ruby> direction (L5)
+          </td>
+          <td style="font-family:monospace; font-size:13px;">
+            <ruby>学校<rt>がっこう</rt></ruby><strong>へ</strong> いきます。<span style="color:var(--lgray); font-size:11px; display:block;">I go to school.</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="note">
+      <div class="note-label">📝 に vs で vs へ — <ruby>紛<rt>まぎ</rt></ruby>らわしい<ruby>助詞<rt>じょし</rt></ruby> Easily confused particles</div>
+      <ul>
+        <li><strong>に</strong> (location) → where something <em>exists</em>: <ruby>机<rt>つくえ</rt></ruby>の<ruby>上<rt>うえ</rt></ruby><strong>に</strong> あります。 <span style="color:var(--lgray); font-size:12px;">(It is ON the desk.)</span>
+          <div class="ja" style="font-size:11px;">→ ものが「ある・いる」<ruby>場所<rt>ばしょ</rt></ruby>。(Where something exists.)</div>
+        </li>
+        <li><strong>で</strong> (location) → where an <em>action</em> happens: としょかん<strong>で</strong> <ruby>読<rt>よ</rt></ruby>みます。 <span style="color:var(--lgray); font-size:12px;">(I read AT the library.)</span>
+          <div class="ja" style="font-size:11px;">→ <ruby>動作<rt>どうさ</rt></ruby>が<ruby>行<rt>おこな</rt></ruby>われる<ruby>場所<rt>ばしょ</rt></ruby>。(Where an action takes place.)</div>
+        </li>
+        <li><strong>へ</strong> (direction) → where you are <em>heading</em>: <ruby>学校<rt>がっこう</rt></ruby><strong>へ</strong> いきます。 <span style="color:var(--lgray); font-size:12px;">(I go TOWARD school.)</span>
+          <div class="ja" style="font-size:11px;">→ <ruby>移動<rt>いどう</rt></ruby>の<ruby>方向<rt>ほうこう</rt></ruby>。(Direction of movement.)</div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- ○/× -->
+    <div class="check-pair">
+      <div class="check-row">
+        <span class="check-mark ok">○</span>
+        <span class="check-text"><ruby>日本<rt>にほん</rt></ruby><strong>には</strong> <ruby>温泉<rt>おんせん</rt></ruby>が たくさん あります。</span>
+        <span class="check-reason">「に」stays, 「は」is added → 「には」. Japan is highlighted as the topic. → 「に」は<ruby>残<rt>のこ</rt></ruby>り「は」がつく。<ruby>日本<rt>にほん</rt></ruby>が<ruby>話題<rt>わだい</rt></ruby>になる。(In Japan, there are many hot springs.)</span>
+      </div>
+      <div class="check-row">
+        <span class="check-mark ng">×</span>
+        <span class="check-text ng"><ruby>日本<rt>にほん</rt></ruby><strong>は</strong> <ruby>温泉<rt>おんせん</rt></ruby>が たくさん あります。</span>
+        <span class="check-reason" style="color:var(--red);">The particle 「に」is missing — this sentence loses the location meaning. → 「に」がないと<ruby>場所<rt>ばしょ</rt></ruby>の<ruby>意味<rt>いみ</rt></ruby>が<ruby>消<rt>き</rt></ruby>える。(The location meaning disappears without に.)</span>
+      </div>
+    </div>
+
+    <!-- Example -->
+    <div class="example-box">
+      <div class="example-label">EXAMPLE <ruby>例文<rt>れいぶん</rt></ruby></div>
+      <div class="example-line"><ruby>私<rt>わたし</rt></ruby>の<ruby>国<rt>くに</rt></ruby><strong>には</strong> すし<ruby>屋<rt>や</rt></ruby>が ありません。</div>
+      <div class="example-line en">In my country, there are no sushi restaurants. (に + は)</div>
+    </div>
+
+    <!-- TRY IT -->
+    <div class="try-box">
+      <div class="try-label">✏️ TRY IT! <ruby>自分<rt>じぶん</rt></ruby>で<ruby>書<rt>か</rt></ruby>いてみよう</div>
+      <div class="try-prompt">Use には / では / とは / へは to highlight a location, person, or direction.
+        <div class="ja">→ には・では・とは・へはを<ruby>使<rt>つか</rt></ruby>って、<ruby>場所<rt>ばしょ</rt></ruby>や<ruby>人<rt>ひと</rt></ruby>を<ruby>話題<rt>わだい</rt></ruby>にしてみましょう。</div>
+      </div>
+      <div class="try-line">＿＿＿＿＿＿＿には ＿＿＿＿＿＿＿が ＿＿＿＿＿＿＿。</div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     SECTION 3: にも／でも／とも／へも
+══════════════════════════════════════════ -->
+<div class="section" id="s3">
+  <div class="section-header">
+    3. にも／でも／とも／へも
+    <span class="ja">particle + も — "also / too" added to other particles</span>
+  </div>
+  <div class="section-body">
+
+    <!-- 導入例文 -->
+    <div class="intro-example">
+      <div class="intro-label">EXAMPLES — Let's look first.
+        <span style="font-weight:400; color:var(--lgray);">→ まず<ruby>例文<rt>れいぶん</rt></ruby>を<ruby>見<rt>み</rt></ruby>てみましょう。</span>
+      </div>
+      <div class="intro-line"><ruby>木曜日<rt>もくようび</rt></ruby><span style="color:var(--red);font-weight:700;">にも</span> テストが あります。</div>
+      <div class="intro-en">There is a test on Thursday too. (に + も = にも)</div>
+      <div class="intro-line">コンビニ<span style="color:var(--red);font-weight:700;">でも</span> チケットが <ruby>買<rt>か</rt></ruby>えます。</div>
+      <div class="intro-en">You can also buy tickets at a convenience store. (で + も = でも)</div>
+    </div>
+
+    <!-- ロジックボックス -->
+    <div class="logic-box">
+      <p>In Lesson 3, you learned that 「も」means "also / too" and replaces 「は」or 「が」.</p>
+      <div class="ja">→ L3で「も」が「は」や「が」の<ruby>代<rt>か</rt></ruby>わりに<ruby>使<rt>つか</rt></ruby>われることを<ruby>学<rt>まな</rt></ruby>びました。("also/too" replaces は or が in simple sentences.)</div>
+      <p style="margin-top:8px;">For other particles (に、で、と、へ), the particle <strong>stays</strong> and 「も」is <strong>added after it</strong>.</p>
+      <div class="ja">→ に・で・と・へなどには、「も」を<ruby>後<rt>うし</rt></ruby>ろにつけます。<ruby>助詞<rt>じょし</rt></ruby>は<ruby>消<rt>き</rt></ruby>えません。(The particle stays. 「も」is added on top.)</div>
+      <p style="margin-top:8px;">💡 This means "the same thing is true in this case <strong>too</strong>".</p>
+      <div class="ja">→「この<ruby>場合<rt>ばあい</rt></ruby>にも<ruby>同<rt>おな</rt></ruby>じことが<ruby>言<rt>い</rt></ruby>える」という<ruby>意味<rt>いみ</rt></ruby>。("The same applies here too.")</div>
+    </div>
+
+    <!-- 変化テーブル -->
+    <table class="use-table">
+      <thead>
+        <tr>
+          <th><ruby>助詞<rt>じょし</rt></ruby> Particle</th>
+          <th>＋ も</th>
+          <th><ruby>意味<rt>いみ</rt></ruby> Meaning</th>
+          <th><ruby>例<rt>れい</rt></ruby> Example</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="font-family:monospace; font-size:15px; font-weight:700; text-align:center;">に</td>
+          <td style="font-family:monospace; font-size:15px; font-weight:700; text-align:center; color:var(--red);">にも</td>
+          <td>at / in — also</td>
+          <td style="font-family:monospace;"><ruby>水曜日<rt>すいようび</rt></ruby><strong>にも</strong> クラスが あります。<span style="color:var(--lgray); font-size:11px; display:block;">There is also a class on Wednesday.</span></td>
+        </tr>
+        <tr>
+          <td style="font-family:monospace; font-size:15px; font-weight:700; text-align:center;">で</td>
+          <td style="font-family:monospace; font-size:15px; font-weight:700; text-align:center; color:var(--red);">でも</td>
+          <td>at / by — also</td>
+          <td style="font-family:monospace;">スーパー<strong>でも</strong> <ruby>買<rt>か</rt></ruby>えます。<span style="color:var(--lgray); font-size:11px; display:block;">You can buy it at the supermarket too.</span></td>
+        </tr>
+        <tr>
+          <td style="font-family:monospace; font-size:15px; font-weight:700; text-align:center;">と</td>
+          <td style="font-family:monospace; font-size:15px; font-weight:700; text-align:center; color:var(--red);">とも</td>
+          <td>with — also</td>
+          <td style="font-family:monospace;">Bさん<strong>とも</strong> <ruby>話<rt>はな</rt></ruby>しました。<span style="color:var(--lgray); font-size:11px; display:block;">I also talked with B.</span></td>
+        </tr>
+        <tr>
+          <td style="font-family:monospace; font-size:15px; font-weight:700; text-align:center;">へ</td>
+          <td style="font-family:monospace; font-size:15px; font-weight:700; text-align:center; color:var(--red);">へも</td>
+          <td>to — also</td>
+          <td style="font-family:monospace;">カナダ<strong>へも</strong> <ruby>行<rt>い</rt></ruby>きたいです。<span style="color:var(--lgray); font-size:11px; display:block;">I also want to go to Canada.</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- 構造式 -->
+    <div class="structure">
+      <div>N ＋ <strong>particle</strong> ＋ <strong>も</strong></div>
+      <div style="color:var(--lgray); font-size:12px; margin-top:4px;">に → にも ／ で → でも ／ と → とも ／ へ → へも</div>
+    </div>
+    <div class="legend">N = noun（<ruby>名詞<rt>めいし</rt></ruby>）</div>
+
+    <!-- Note: セクション2との違い -->
+    <div class="note">
+      <div class="note-label">📝 Section 2 vs Section 3 — は vs も</div>
+      <ul>
+        <li><strong>particle ＋ は</strong> → <em>highlights / contrasts</em> that item (the focus is <em>this</em> one vs others)
+          <div class="ja">→ <ruby>対比<rt>たいひ</rt></ruby>・<ruby>強調<rt>きょうちょう</rt></ruby>。「これ」と「他<ruby>のもの<rt>ほかのもの</rt></ruby>」を<ruby>比<rt>くら</rt></ruby>べる。</div>
+        </li>
+        <li><strong>particle ＋ も</strong> → <em>adds</em> another item ("also / too" — the same thing applies here too)
+          <div class="ja">→ <ruby>追加<rt>ついか</rt></ruby>。「これも<ruby>同<rt>おな</rt></ruby>じ」という<ruby>意味<rt>いみ</rt></ruby>。</div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- ○/× -->
+    <div class="check-pair">
+      <div class="check-row">
+        <span class="check-mark ok">○</span>
+        <span class="check-text">A：「<ruby>火曜日<rt>かようび</rt></ruby>に テストが ありますか。」 B：「ええ。<ruby>木曜日<rt>もくようび</rt></ruby><strong>にも</strong> ありますよ。」</span>
+        <span class="check-reason">「にも」adds Thursday as another day when a test occurs. → 「にも」で「<ruby>木曜日<rt>もくようび</rt></ruby>もテストがある」という<ruby>追加情報<rt>ついかじょうほう</rt></ruby>を<ruby>伝<rt>つた</rt></ruby>えている。(A: "Is there a test on Tuesday?" B: "Yes. There is one on Thursday too.")</span>
+      </div>
+      <div class="check-row">
+        <span class="check-mark ng">×</span>
+        <span class="check-text ng">B：「ええ。<ruby>木曜日<rt>もくようび</rt></ruby><strong>には</strong> ありますよ。」</span>
+        <span class="check-reason" style="color:var(--red);">「には」would contrast or highlight Thursday — it does not add information about "also". → 「には」だと<ruby>対比<rt>たいひ</rt></ruby>になり、「<ruby>追加<rt>ついか</rt></ruby>」の<ruby>意味<rt>いみ</rt></ruby>にならない。(には creates a contrast, not an addition.)</span>
+      </div>
+    </div>
+
+    <!-- Example -->
+    <div class="example-box">
+      <div class="example-label">EXAMPLE <ruby>例文<rt>れいぶん</rt></ruby></div>
+      <div class="example-line">A：「<ruby>火曜日<rt>かようび</rt></ruby>に テストが ありますか。」</div>
+      <div class="example-line">B：「ええ。<ruby>木曜日<rt>もくようび</rt></ruby><strong>にも</strong> ありますよ。」</div>
+      <div class="example-line en">A: "Is there a test on Tuesday?" B: "Yes. There is one on Thursday too."</div>
+    </div>
+
+    <!-- TRY IT -->
+    <div class="try-box">
+      <div class="try-label">✏️ TRY IT! <ruby>自分<rt>じぶん</rt></ruby>で<ruby>書<rt>か</rt></ruby>いてみよう</div>
+      <div class="try-prompt">Add にも / でも / とも / へも to a sentence to say "also / too".
+        <div class="ja">→ にも・でも・とも・へもを<ruby>使<rt>つか</rt></ruby>って「〜も」の<ruby>文<rt>ぶん</rt></ruby>を<ruby>作<rt>つく</rt></ruby>ってみましょう。</div>
+      </div>
+      <div class="try-line">＿＿＿＿＿＿＿にも ＿＿＿＿＿＿＿が あります。</div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     SECTION 4: 何も／だれも〜ません
+══════════════════════════════════════════ -->
+<div class="section" id="s4">
+  <div class="section-header">
+    4. <ruby>何<rt>なに</rt></ruby>も／だれも／だれにも／どこも／どこへも〜ません
+    <span class="ja">Total negation — "nothing / nobody / nowhere"</span>
+  </div>
+  <div class="section-body">
+
+    <!-- 導入例文 -->
+    <div class="intro-example">
+      <div class="intro-label">EXAMPLES — Let's look first.
+        <span style="font-weight:400; color:var(--lgray);">→ まず<ruby>例文<rt>れいぶん</rt></ruby>を<ruby>見<rt>み</rt></ruby>てみましょう。</span>
+      </div>
+      <div class="intro-line"><ruby>教室<rt>きょうしつ</rt></ruby>に <span style="color:var(--red);font-weight:700;">だれも</span> いません。</div>
+      <div class="intro-en">There is nobody in the classroom.</div>
+      <div class="intro-line">きのう <span style="color:var(--red);font-weight:700;">どこへも</span> <ruby>行<rt>い</rt></ruby>きませんでした。</div>
+      <div class="intro-en">Yesterday, I did not go anywhere.</div>
+    </div>
+
+    <!-- ロジックボックス -->
+    <div class="logic-box">
+      <p>Use these words to say <strong>"nothing", "nobody", "nowhere"</strong> — a <strong>total denial</strong>.</p>
+      <div class="ja">→「<ruby>何<rt>なに</rt></ruby>も」「だれも」「どこも」などは<ruby>全面的<rt>ぜんめんてき</rt></ruby>な<ruby>否定<rt>ひてい</rt></ruby>を<ruby>表<rt>あらわ</rt></ruby>します。(Total negation — nothing / nobody / nowhere.)</div>
+      <p style="margin-top:8px;"><strong>Always use with a negative verb form</strong> (〜ません / 〜ませんでした). You cannot use these words with a positive verb.</p>
+      <div class="ja">→ <ruby>必<rt>かなら</rt></ruby>ず<ruby>否定形<rt>ひていけい</rt></ruby>（〜ません・〜ませんでした）と<ruby>一緒<rt>いっしょ</rt></ruby>に<ruby>使<rt>つか</rt></ruby>います。(Must always use with negative verb form.)</div>
+      <p style="margin-top:8px;">How to form: start with the question word, then look at the particle.</p>
+      <div class="ja">→ <ruby>疑問詞<rt>ぎもんし</rt></ruby>（question word）の<ruby>後<rt>あと</rt></ruby>の<ruby>助詞<rt>じょし</rt></ruby>を<ruby>確認<rt>かくにん</rt></ruby>します。(Check the particle after the question word.)</div>
+      <div style="margin-top:10px; font-size:13px; background:#fafafa; border:1px solid var(--border); border-radius:3px; padding:10px 14px;">
+        <div style="margin:3px 0;">• If the particle is <strong>「が」or「を」</strong> → <strong>change to「も」</strong>
+          <span style="color:var(--gray); font-size:12px; margin-left:6px;">→「が」「を」の<ruby>場合<rt>ばあい</rt></ruby>は「も」に<ruby>変<rt>か</rt></ruby>える。</span>
+        </div>
+        <div style="margin:3px 0;">• For <strong>other particles</strong> (に、へ, etc.) → <strong>add「も」after the particle</strong>
+          <span style="color:var(--gray); font-size:12px; margin-left:6px;">→ その<ruby>他<rt>ほか</rt></ruby>の<ruby>助詞<rt>じょし</rt></ruby>には「も」をつける。</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 各ペア -->
+    <h2><ruby>何<rt>なに</rt></ruby>も — nothing <span class="ja"><ruby>何<rt>なに</rt></ruby>も（のこと）</span></h2>
+
+    <div class="intro-example">
+      <div class="intro-line" style="color:var(--gray); font-size:13px;"><ruby>何<rt>なに</rt></ruby> ＋ <span style="text-decoration:line-through; color:var(--red);">が／を</span> → <ruby>何<rt>なに</rt></ruby><strong>も</strong> ＋ ません</div>
+    </div>
+
+    <div class="check-pair">
+      <div class="check-row">
+        <span class="check-mark ok">○</span>
+        <span class="check-text"><ruby>冷蔵庫<rt>れいぞうこ</rt></ruby>に <ruby>何<rt>なに</rt></ruby><strong>も</strong> ありません。</span>
+        <span class="check-reason">「が」is replaced by「も」, negative verb → total negation. → 「が」→「も」、<ruby>否定形<rt>ひていけい</rt></ruby>で<ruby>全面否定<rt>ぜんめんひてい</rt></ruby>。(There is nothing in the fridge.)</span>
+      </div>
+      <div class="check-row">
+        <span class="check-mark ng">×</span>
+        <span class="check-text ng"><ruby>冷蔵庫<rt>れいぞうこ</rt></ruby>に <ruby>何<rt>なに</rt></ruby><strong>も</strong> あります。</span>
+        <span class="check-reason" style="color:var(--red);">「何も」must be used with a negative verb. 「あります」is positive. → 「<ruby>何<rt>なに</rt></ruby>も」は<ruby>否定形<rt>ひていけい</rt></ruby>と<ruby>使<rt>つか</rt></ruby>う。（Cannot use 何も with a positive verb.）</span>
+      </div>
+    </div>
+
+    <div class="example-box">
+      <div class="example-label">EXAMPLE <ruby>例文<rt>れいぶん</rt></ruby> — <ruby>何<rt>なに</rt></ruby>も (nothing)</div>
+      <div class="example-line"><ruby>今日<rt>きょう</rt></ruby>は <ruby>何<rt>なに</rt></ruby><strong>も</strong> <ruby>食<rt>た</rt></ruby>べませんでした。</div>
+      <div class="example-line en">Today, I did not eat anything.</div>
+    </div>
+
+    <h2 style="margin-top:20px;">だれも — nobody <span class="ja">だれも（のこと）</span></h2>
+
+    <div class="intro-example">
+      <div class="intro-line" style="color:var(--gray); font-size:13px;">だれ ＋ <span style="text-decoration:line-through; color:var(--red);">が／を</span> → だれ<strong>も</strong> ＋ ません</div>
+    </div>
+
+    <div class="check-pair">
+      <div class="check-row">
+        <span class="check-mark ok">○</span>
+        <span class="check-text"><ruby>教室<rt>きょうしつ</rt></ruby>に だれ<strong>も</strong> いません。</span>
+        <span class="check-reason">「が」→「も」, negative verb → "nobody is here". → 「が」→「も」＋<ruby>否定形<rt>ひていけい</rt></ruby>で「だれもいない」という<ruby>意味<rt>いみ</rt></ruby>。(There is nobody in the classroom.)</span>
+      </div>
+      <div class="check-row">
+        <span class="check-mark ng">×</span>
+        <span class="check-text ng">だれ<strong>も</strong> <ruby>来<rt>き</rt></ruby>ました。</span>
+        <span class="check-reason" style="color:var(--red);">「来ました」is positive. 「だれも」needs a negative verb → 「だれも 来ませんでした」. → 「<ruby>来<rt>き</rt></ruby>ました」は<ruby>肯定形<rt>こうていけい</rt></ruby>なのでNG。（だれも must be used with ません.）</span>
+      </div>
+    </div>
+
+    <div class="example-box">
+      <div class="example-label">EXAMPLE <ruby>例文<rt>れいぶん</rt></ruby> — だれも (nobody)</div>
+      <div class="example-line">パーティーに だれ<strong>も</strong> <ruby>来<rt>き</rt></ruby>ませんでした。</div>
+      <div class="example-line en">Nobody came to the party.</div>
+    </div>
+
+    <h2 style="margin-top:20px;">だれにも — to nobody <span class="ja">だれにも（のこと）</span></h2>
+
+    <div class="intro-example">
+      <div class="intro-line" style="color:var(--gray); font-size:13px;">だれ ＋ に ＋ <strong>も</strong> → だれに<strong>も</strong> ＋ ません &nbsp; (「に」stays, add「も」)</div>
+    </div>
+
+    <div class="check-pair">
+      <div class="check-row">
+        <span class="check-mark ok">○</span>
+        <span class="check-text">この ことは だれに<strong>も</strong> <ruby>言<rt>い</rt></ruby>いませんでした。</span>
+        <span class="check-reason">「に」stays, 「も」is added → "to nobody". → 「に」は<ruby>残<rt>のこ</rt></ruby>り「も」をつける。（I did not tell anyone about this.）</span>
+      </div>
+      <div class="check-row">
+        <span class="check-mark ng">×</span>
+        <span class="check-text ng">この ことは だれ<strong>も</strong> <ruby>言<rt>い</rt></ruby>いませんでした。</span>
+        <span class="check-reason" style="color:var(--red);">「に」is dropped — the meaning changes. 「だれにも」= "to nobody". 「だれも」= "nobody (as subject)". → 「に」がないと<ruby>意味<rt>いみ</rt></ruby>が<ruby>変<rt>か</rt></ruby>わる。（Without に, the meaning changes.）</span>
+      </div>
+    </div>
+
+    <div class="example-box">
+      <div class="example-label">EXAMPLE <ruby>例文<rt>れいぶん</rt></ruby> — だれにも (to nobody)</div>
+      <div class="example-line">この ひみつは だれに<strong>も</strong> <ruby>話<rt>はな</rt></ruby>さないでください。</div>
+      <div class="example-line en">Please don't tell this secret to anyone.</div>
+    </div>
+
+    <h2 style="margin-top:20px;">どこも — nowhere <span class="ja">どこも（のこと）</span></h2>
+
+    <div class="intro-example">
+      <div class="intro-line" style="color:var(--gray); font-size:13px;">どこ ＋ <span style="text-decoration:line-through; color:var(--red);">が／を</span> → どこ<strong>も</strong> ＋ ません &nbsp; (「が／を」→「も」)</div>
+    </div>
+
+    <div class="example-box">
+      <div class="example-label">EXAMPLE <ruby>例文<rt>れいぶん</rt></ruby> — どこも (nowhere)</div>
+      <div class="example-line"><ruby>休日<rt>きゅうじつ</rt></ruby>は どこ<strong>も</strong> こんでいます。</div>
+      <div class="example-line en">On holidays, everywhere is crowded. (どこも + positive = "everywhere / all places")</div>
+      <div class="example-line" style="margin-top:8px;"><ruby>病気<rt>びょうき</rt></ruby>で どこ<strong>も</strong> <ruby>行<rt>い</rt></ruby>けませんでした。</div>
+      <div class="example-line en">Because I was sick, I could not go anywhere. (どこも + negative = "nowhere")</div>
+    </div>
+
+    <div class="exception-box">
+      <div class="exception-label">⚠️ どこも — special note <ruby>注意<rt>ちゅうい</rt></ruby></div>
+      <p style="font-size:13px;">「どこも」+ positive verb can mean <strong>"everywhere"</strong>. The total-negation meaning ("nowhere") requires a <strong>negative verb</strong>.</p>
+      <div class="ja" style="font-size:12px; margin-top:4px;">→「どこも」は<ruby>肯定形<rt>こうていけい</rt></ruby>と<ruby>使<rt>つか</rt></ruby>うと「どこでも（everywhere）」の<ruby>意味<rt>いみ</rt></ruby>になることがある。<ruby>全面否定<rt>ぜんめんひてい</rt></ruby>（nowhere）には<ruby>否定形<rt>ひていけい</rt></ruby>が<ruby>必要<rt>ひつよう</rt></ruby>。(With positive verb = "everywhere". With negative = "nowhere".)</div>
+    </div>
+
+    <h2 style="margin-top:20px;">どこへも — to nowhere <span class="ja">どこへも（のこと）</span></h2>
+
+    <div class="intro-example">
+      <div class="intro-line" style="color:var(--gray); font-size:13px;">どこ ＋ へ ＋ <strong>も</strong> → どこへ<strong>も</strong> ＋ ません &nbsp; (「へ」stays, add「も」)</div>
+    </div>
+
+    <div class="check-pair">
+      <div class="check-row">
+        <span class="check-mark ok">○</span>
+        <span class="check-text">きのう どこへ<strong>も</strong> <ruby>行<rt>い</rt></ruby>きませんでした。</span>
+        <span class="check-reason">「へ」stays, 「も」added, negative verb → "did not go anywhere". → 「へ」は<ruby>残<rt>のこ</rt></ruby>り「も」をつける。<ruby>否定形<rt>ひていけい</rt></ruby>で「どこへも<ruby>行<rt>い</rt></ruby>かない」。(Yesterday, I did not go anywhere.)</span>
+      </div>
+      <div class="check-row">
+        <span class="check-mark ng">×</span>
+        <span class="check-text ng">きのう どこ<strong>も</strong> <ruby>行<rt>い</rt></ruby>きませんでした。</span>
+        <span class="check-reason" style="color:var(--red);">「どこも」is used for "exists somewhere" / "nowhere (in place)". For movement, use 「どこへも」. → <ruby>移動<rt>いどう</rt></ruby>（go / come）には「どこへも」を<ruby>使<rt>つか</rt></ruby>う。（For movement verbs, use どこへも.）</span>
+      </div>
+    </div>
+
+    <div class="example-box">
+      <div class="example-label">EXAMPLE <ruby>例文<rt>れいぶん</rt></ruby> — どこへも (to nowhere)</div>
+      <div class="example-line">きのう どこへ<strong>も</strong> <ruby>行<rt>い</rt></ruby>きませんでした。</div>
+      <div class="example-line en">Yesterday, I did not go anywhere.</div>
+    </div>
+
+    <!-- 構造式 まとめ -->
+    <div style="margin-top:16px;">
+      <div class="structure">
+        <div><ruby>何<rt>なに</rt></ruby>も ／ だれも ／ どこも ／ だれにも ／ どこへも ＋ V<strong>ません</strong>（でした）</div>
+      </div>
+      <div class="legend">V = verb（<ruby>動詞<rt>どうし</rt></ruby>）</div>
+    </div>
+
+    <!-- TRY IT -->
+    <div class="try-box">
+      <div class="try-label">✏️ TRY IT! <ruby>自分<rt>じぶん</rt></ruby>で<ruby>書<rt>か</rt></ruby>いてみよう</div>
+      <div class="try-prompt">Make a total-negation sentence using 何も / だれも / どこへも.
+        <div class="ja">→ <ruby>何<rt>なに</rt></ruby>も・だれも・どこへもを<ruby>使<rt>つか</rt></ruby>って<ruby>全面否定<rt>ぜんめんひてい</rt></ruby>の<ruby>文<rt>ぶん</rt></ruby>を<ruby>作<rt>つく</rt></ruby>ってみましょう。</div>
+      </div>
+      <div class="try-line">＿＿＿＿＿＿＿も ＿＿＿＿＿＿＿ませんでした。</div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     SECTION 5: が［描写］
+══════════════════════════════════════════ -->
+<div class="section" id="s5">
+  <div class="section-header">
+    5. が［<ruby>描写<rt>びょうしゃ</rt></ruby>］
+    <span class="ja">が for description — noticing something for the first time</span>
+  </div>
+  <div class="section-body">
+
+    <!-- が全用法テーブル -->
+    <p style="font-size:13px; color:var(--gray); margin-bottom:8px;">「が」has several uses. Today you will learn use ④. → 「が」にはいくつかの<ruby>用法<rt>ようほう</rt></ruby>があります。<ruby>今日<rt>きょう</rt></ruby>は④を<ruby>学<rt>まな</rt></ruby>びます。</p>
+    <table class="use-table">
+      <thead>
+        <tr>
+          <th style="width:28px;">#</th>
+          <th><ruby>用法<rt>ようほう</rt></ruby> Use</th>
+          <th style="width:70px;"><ruby>習<rt>なら</rt></ruby>った<ruby>回<rt>かい</rt></ruby> Lesson</th>
+          <th><ruby>例<rt>れい</rt></ruby> Example</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align:center; font-weight:700;">①</td>
+          <td><ruby>感情<rt>かんじょう</rt></ruby>・<ruby>能力<rt>のうりょく</rt></ruby>の<ruby>対象<rt>たいしょう</rt></ruby><br><span style="color:var(--lgray); font-size:11px;">object of feelings / abilities — "like / good at ~"</span></td>
+          <td style="color:var(--lgray); font-size:12px; text-align:center;">L7</td>
+          <td style="font-family:monospace;"><ruby>音楽<rt>おんがく</rt></ruby><strong>が</strong> <ruby>好<rt>す</rt></ruby>きです。<span style="color:var(--lgray); font-size:11px; display:block;">I like music.</span></td>
+        </tr>
+        <tr>
+          <td style="text-align:center; font-weight:700;">②</td>
+          <td><ruby>主語<rt>しゅご</rt></ruby> subject marker (existence)<br><span style="color:var(--lgray); font-size:11px;">"there is ~ / ~ exists"</span></td>
+          <td style="color:var(--lgray); font-size:12px; text-align:center;">L8</td>
+          <td style="font-family:monospace;"><ruby>部屋<rt>へや</rt></ruby>に <ruby>猫<rt>ねこ</rt></ruby><strong>が</strong> います。<span style="color:var(--lgray); font-size:11px; display:block;">There is a cat in the room.</span></td>
+        </tr>
+        <tr>
+          <td style="text-align:center; font-weight:700;">③</td>
+          <td><ruby>逆接<rt>ぎゃくせつ</rt></ruby> "but" / contrast<br><span style="color:var(--lgray); font-size:11px;">connects two contrasting ideas</span></td>
+          <td style="color:var(--lgray); font-size:12px; text-align:center;">L11</td>
+          <td style="font-family:monospace;"><ruby>日本語<rt>にほんご</rt></ruby>は<ruby>好<rt>す</rt></ruby>きです<strong>が</strong>、むずかしいです。<span style="color:var(--lgray); font-size:11px; display:block;">I like Japanese, but it is difficult.</span></td>
+        </tr>
+        <tr class="today">
+          <td style="text-align:center; font-weight:700;">④</td>
+          <td><ruby>描写<rt>びょうしゃ</rt></ruby> description — noticing something new<br><span style="color:var(--lgray); font-size:11px;">✦ TODAY — pointing out / describing what you notice</span></td>
+          <td style="color:var(--lgray); font-size:12px; text-align:center;">L17 ✦</td>
+          <td style="font-family:monospace;"><ruby>雨<rt>あめ</rt></ruby><strong>が</strong> ふっています。<span style="color:var(--lgray); font-size:11px; display:block;">It is raining. (you just noticed it)</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- 導入例文 -->
+    <div class="intro-example">
+      <div class="intro-label">EXAMPLES — Let's look first.
+        <span style="font-weight:400; color:var(--lgray);">→ まず<ruby>例文<rt>れいぶん</rt></ruby>を<ruby>見<rt>み</rt></ruby>てみましょう。</span>
+      </div>
+      <div class="intro-line"><ruby>雨<rt>あめ</rt></ruby><span style="color:var(--red);font-weight:700;">が</span> ふっています。</div>
+      <div class="intro-en">It is raining. (you looked outside and noticed it)</div>
+      <div class="intro-line"><ruby>空<rt>そら</rt></ruby><span style="color:var(--red);font-weight:700;">が</span> きれいですね。</div>
+      <div class="intro-en">The sky is beautiful, isn't it! (you notice the sky right now)</div>
+    </div>
+
+    <!-- ロジックボックス -->
+    <div class="logic-box">
+      <p>When you <strong>notice something</strong> and want to <strong>describe or point it out</strong>, use 「が」for the subject — not 「は」.</p>
+      <div class="ja">→ <ruby>気<rt>き</rt></ruby>づいたことを<ruby>描写<rt>びょうしゃ</rt></ruby>するとき、<ruby>主語<rt>しゅご</rt></ruby>に「が」を<ruby>使<rt>つか</rt></ruby>います。「は」ではありません。(When pointing out something you notice, use が for the subject.)</div>
+      <p style="margin-top:8px;">This often happens when describing a <strong>scene</strong>, or reporting something <strong>you just noticed for the first time</strong>.</p>
+      <div class="ja">→ <ruby>景色<rt>けしき</rt></ruby>の<ruby>描写<rt>びょうしゃ</rt></ruby>や、<ruby>今<rt>いま</rt></ruby><ruby>気<rt>き</rt></ruby>づいたことを<ruby>伝<rt>つた</rt></ruby>えるときに<ruby>使<rt>つか</rt></ruby>います。(Describing a scene or something you just noticed.)</div>
+    </div>
+
+    <!-- は vs が 比較 -->
+    <div class="note">
+      <div class="note-label">📝 は vs が — key difference <ruby>重要<rt>じゅうよう</rt></ruby>なちがい</div>
+      <ul>
+        <li><strong>〜は</strong> → the topic is <em>already known</em> to the listener. You are talking <em>about</em> it.
+          <div class="ja">→ すでに<ruby>知<rt>し</rt></ruby>っている<ruby>話題<rt>わだい</rt></ruby>について<ruby>話<rt>はな</rt></ruby>す。(<ruby>雨<rt>あめ</rt></ruby>は つめたいです = talking about rain as a known topic)</div>
+        </li>
+        <li><strong>〜が</strong> → you are <em>pointing out</em> something new you just noticed.
+          <div class="ja">→ <ruby>今<rt>いま</rt></ruby><ruby>気<rt>き</rt></ruby>づいたことを<ruby>指<rt>ゆび</rt></ruby>さす。(<ruby>雨<rt>あめ</rt></ruby>が ふっています = noticing it is raining right now)</div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- ○/× -->
+    <div class="check-pair">
+      <div class="check-row">
+        <span class="check-mark ok">○</span>
+        <span class="check-text"><ruby>雨<rt>あめ</rt></ruby><strong>が</strong> ふっています。</span>
+        <span class="check-reason">You looked outside and noticed it is raining → 「が」describes the scene. → <ruby>気<rt>き</rt></ruby>づいた<ruby>場面<rt>ばめん</rt></ruby>を<ruby>描写<rt>びょうしゃ</rt></ruby>するので「が」を<ruby>使<rt>つか</rt></ruby>う。(It is raining. [you just noticed])</span>
+      </div>
+      <div class="check-row">
+        <span class="check-mark ng">×</span>
+        <span class="check-text ng"><ruby>雨<rt>あめ</rt></ruby><strong>は</strong> ふっています。</span>
+        <span class="check-reason" style="color:var(--red);">「は」suggests "rain" is an established topic — this sounds unnatural when you are simply noticing / reporting the weather. → 「は」は<ruby>既知<rt>きち</rt></ruby>の<ruby>話題<rt>わだい</rt></ruby>に<ruby>使<rt>つか</rt></ruby>う。<ruby>気<rt>き</rt></ruby>づきの<ruby>場面<rt>ばめん</rt></ruby>では<ruby>不自然<rt>ふしぜん</rt></ruby>。(は is for known topics — unnatural for noticing.)</span>
+      </div>
+    </div>
+
+    <!-- Example -->
+    <div class="example-box">
+      <div class="example-label">EXAMPLE <ruby>例文<rt>れいぶん</rt></ruby></div>
+      <div class="example-line"><ruby>雨<rt>あめ</rt></ruby><strong>が</strong> ふっています。</div>
+      <div class="example-line en">It is raining. (You noticed it is raining and are describing the scene.)</div>
+      <div class="example-line" style="margin-top:6px;"><ruby>外<rt>そと</rt></ruby>に <ruby>子<rt>こ</rt></ruby>ども<strong>が</strong> います。</div>
+      <div class="example-line en">There is a child outside. (You noticed a child — pointing it out.)</div>
+    </div>
+
+    <!-- TRY IT -->
+    <div class="try-box">
+      <div class="try-label">✏️ TRY IT! <ruby>自分<rt>じぶん</rt></ruby>で<ruby>書<rt>か</rt></ruby>いてみよう</div>
+      <div class="try-prompt">Describe something you notice right now using 〜が.
+        <div class="ja">→「が」を<ruby>使<rt>つか</rt></ruby>って、<ruby>今<rt>いま</rt></ruby><ruby>気<rt>き</rt></ruby>づいたことを<ruby>描写<rt>びょうしゃ</rt></ruby>してみましょう。</div>
+      </div>
+      <div class="try-line">＿＿＿＿＿＿＿が ＿＿＿＿＿＿＿ています。</div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     SUMMARY
+══════════════════════════════════════════ -->
+<div class="section" id="summary">
+  <div class="section-header">
+    まとめ <span class="ja">Summary — Lesson 17</span>
+  </div>
+  <div class="section-body">
+
+    <table class="summary-table">
+      <thead>
+        <tr>
+          <th style="width:200px;"><ruby>文法<rt>ぶんぽう</rt></ruby> Grammar</th>
+          <th style="width:200px;"><ruby>構造<rt>こうぞう</rt></ruby> Structure</th>
+          <th><ruby>例文<rt>れいぶん</rt></ruby> Example</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>は［<ruby>文<rt>ぶん</rt></ruby>の<ruby>主題<rt>しゅだい</rt></ruby>］<br><span style="color:var(--lgray); font-size:11px;">object → topic (を → は)</span></td>
+          <td style="font-family:monospace; font-size:12px;">N<span style="text-decoration:line-through; color:var(--red);">を</span> → N<strong>は</strong> ＋ V</td>
+          <td>しゅくだい<strong>は</strong> あした <ruby>出<rt>だ</rt></ruby>して ください。<br><span style="color:var(--lgray); font-size:11px;">Please hand in your homework tomorrow.</span></td>
+        </tr>
+        <tr>
+          <td>には／では／とは／へは<br><span style="color:var(--lgray); font-size:11px;">particle + は (contrast / highlight)</span></td>
+          <td style="font-family:monospace; font-size:12px;">N ＋ particle ＋ <strong>は</strong></td>
+          <td><ruby>国<rt>くに</rt></ruby><strong>には</strong> すし<ruby>屋<rt>や</rt></ruby>が ありません。<br><span style="color:var(--lgray); font-size:11px;">In my country there are no sushi restaurants.</span></td>
+        </tr>
+        <tr>
+          <td>にも／でも／とも／へも<br><span style="color:var(--lgray); font-size:11px;">particle + も (also / too)</span></td>
+          <td style="font-family:monospace; font-size:12px;">N ＋ particle ＋ <strong>も</strong></td>
+          <td><ruby>木曜日<rt>もくようび</rt></ruby><strong>にも</strong> テストが あります。<br><span style="color:var(--lgray); font-size:11px;">There is also a test on Thursday.</span></td>
+        </tr>
+        <tr>
+          <td><ruby>何<rt>なに</rt></ruby>も〜ません<br><span style="color:var(--lgray); font-size:11px;">nothing</span></td>
+          <td style="font-family:monospace; font-size:12px;"><ruby>何<rt>なに</rt></ruby><strong>も</strong> ＋ Vません</td>
+          <td><ruby>何<rt>なに</rt></ruby><strong>も</strong> <ruby>食<rt>た</rt></ruby>べませんでした。<br><span style="color:var(--lgray); font-size:11px;">I did not eat anything.</span></td>
+        </tr>
+        <tr>
+          <td>だれも〜ません<br><span style="color:var(--lgray); font-size:11px;">nobody</span></td>
+          <td style="font-family:monospace; font-size:12px;">だれ<strong>も</strong> ＋ Vません</td>
+          <td>だれ<strong>も</strong> <ruby>来<rt>き</rt></ruby>ませんでした。<br><span style="color:var(--lgray); font-size:11px;">Nobody came.</span></td>
+        </tr>
+        <tr>
+          <td>だれにも〜ません<br><span style="color:var(--lgray); font-size:11px;">to nobody</span></td>
+          <td style="font-family:monospace; font-size:12px;">だれに<strong>も</strong> ＋ Vません</td>
+          <td>だれに<strong>も</strong> <ruby>言<rt>い</rt></ruby>いませんでした。<br><span style="color:var(--lgray); font-size:11px;">I did not tell anyone.</span></td>
+        </tr>
+        <tr>
+          <td>どこも〜ません<br><span style="color:var(--lgray); font-size:11px;">nowhere (place)</span></td>
+          <td style="font-family:monospace; font-size:12px;">どこ<strong>も</strong> ＋ Vません</td>
+          <td><ruby>病気<rt>びょうき</rt></ruby>で どこ<strong>も</strong> <ruby>行<rt>い</rt></ruby>けませんでした。<br><span style="color:var(--lgray); font-size:11px;">I could not go anywhere because I was sick.</span></td>
+        </tr>
+        <tr>
+          <td>どこへも〜ません<br><span style="color:var(--lgray); font-size:11px;">to nowhere (movement)</span></td>
+          <td style="font-family:monospace; font-size:12px;">どこへ<strong>も</strong> ＋ Vません</td>
+          <td>きのう どこへ<strong>も</strong> <ruby>行<rt>い</rt></ruby>きませんでした。<br><span style="color:var(--lgray); font-size:11px;">Yesterday I did not go anywhere.</span></td>
+        </tr>
+        <tr>
+          <td>が［<ruby>描写<rt>びょうしゃ</rt></ruby>］<br><span style="color:var(--lgray); font-size:11px;">noticing / describing a scene</span></td>
+          <td style="font-family:monospace; font-size:12px;">N<strong>が</strong> ＋ V（<ruby>描写<rt>びょうしゃ</rt></ruby>）</td>
+          <td><ruby>雨<rt>あめ</rt></ruby><strong>が</strong> ふっています。<br><span style="color:var(--lgray); font-size:11px;">It is raining. (you just noticed)</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="note" style="margin-top:16px;">
+      <div class="note-label">📝 Key points — 17<ruby>回目<rt>かいめ</rt></ruby></div>
+      <ul>
+        <li><strong>を → は</strong>: The particle 「を」disappears and 「は」replaces it. Meaning stays the same — focus changes.
+          <div class="ja">→「を」が「は」に<ruby>変<rt>か</rt></ruby>わる。<ruby>意味<rt>いみ</rt></ruby>は<ruby>同<rt>おな</rt></ruby>じで、<ruby>焦点<rt>しょうてん</rt></ruby>が<ruby>変<rt>か</rt></ruby>わる。</div>
+        </li>
+        <li><strong>particle ＋ は</strong> (には・では等): The particle stays, 「は」is added. = highlight / contrast.
+          <div class="ja">→ <ruby>助詞<rt>じょし</rt></ruby>は<ruby>残<rt>のこ</rt></ruby>り「は」をつける。<ruby>対比<rt>たいひ</rt></ruby>・<ruby>強調<rt>きょうちょう</rt></ruby>。</div>
+        </li>
+        <li><strong>particle ＋ も</strong> (にも・でも等): The particle stays, 「も」is added. = "also / too".
+          <div class="ja">→ <ruby>助詞<rt>じょし</rt></ruby>は<ruby>残<rt>のこ</rt></ruby>り「も」をつける。<ruby>追加<rt>ついか</rt></ruby>（also/too）。</div>
+        </li>
+        <li><strong><ruby>何<rt>なに</rt></ruby>も・だれも・どこも（へも）</strong>: Always use with a <strong>negative</strong> verb (ません / ませんでした).
+          <div class="ja">→ <ruby>必<rt>かなら</rt></ruby>ず<ruby>否定形<rt>ひていけい</rt></ruby>（ません・ませんでした）と<ruby>一緒<rt>いっしょ</rt></ruby>に<ruby>使<rt>つか</rt></ruby>う。</div>
+        </li>
+        <li><strong>が［<ruby>描写<rt>びょうしゃ</rt></ruby>］</strong>: When you notice something new → use 「が」. When talking about a known topic → use 「は」.
+          <div class="ja">→ <ruby>気<rt>き</rt></ruby>づきの<ruby>描写<rt>びょうしゃ</rt></ruby>は「が」。<ruby>既知<rt>きち</rt></ruby>の<ruby>話題<rt>わだい</rt></ruby>は「は」。</div>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+</div><!-- /page -->
+</body>
+</html>
